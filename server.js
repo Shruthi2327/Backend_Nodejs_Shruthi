@@ -19,13 +19,13 @@ const vendorRoutes=require('./routes/vendorRoutes')
 app.use('/vendor',vendorRoutes)
 const firmRoutes=require('./routes/firmRoutes')
 app.use('/firm',firmRoutes)
-const port=3000;
+const port=process.env.port|| 3000;
 
 app.listen(port,()=>{
     console.log(`app is listening on the port ${port}`)
 })
 
 //creating a basic route to check the 
-app.get("/home",(req,res)=>{
+app.get("/",(req,res)=>{
     res.send("root is working re fellow!");
 })
